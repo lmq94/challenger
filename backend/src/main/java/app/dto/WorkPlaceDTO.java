@@ -1,6 +1,7 @@
 package app.dto;
 
 import app.domain.WorkPlace;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class WorkPlaceDTO {
 
+    @NotNull(message = "El pais no puede ser nulo" )
     private String country;
 
+    @NotNull(message = "El nombre no puede ser nulo" )
     private String name;
 
     private int yellowAlerts;
