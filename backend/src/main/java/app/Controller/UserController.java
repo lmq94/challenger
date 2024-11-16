@@ -1,6 +1,7 @@
 package app.Controller;
 
 import app.dto.UserDTO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +21,13 @@ public class UserController {
     }
 
     @PostMapping("")
-    public ResponseEntity<?> createUser(@RequestBody UserDTO user) {
+    public ResponseEntity<?> createUser(@RequestBody @Valid UserDTO user) {
         this.userService.createUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body("se ha creado con exito el usuario");
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> updateUser(@RequestBody UserDTO user, @PathVariable Long id) {
+    public ResponseEntity<?> updateUser(@RequestBody @Valid UserDTO user, @PathVariable Long id) {
         this.userService.updateUser(user,id);
         return ResponseEntity.ok("Se ha actualizado con exito los datos del usuario!");
     }

@@ -1,6 +1,7 @@
 package app.Controller;
 
 import app.dto.WorkPlaceDTO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,12 @@ public class WorkPlaceController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> createWorkPlace(@RequestBody WorkPlaceDTO workPlaceDTO){
+    public ResponseEntity<?> createWorkPlace(@RequestBody @Valid WorkPlaceDTO workPlaceDTO){
        return ResponseEntity.status(HttpStatus.CREATED).body(this.workPlaceService.CreateWorkPlace(workPlaceDTO));
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> updateWorkPlace(@RequestBody WorkPlaceDTO workPlaceDTO, @PathVariable Long id){
+    public ResponseEntity<?> updateWorkPlace(@RequestBody @Valid WorkPlaceDTO workPlaceDTO, @PathVariable Long id){
         return ResponseEntity.ok(this.workPlaceService.updateWorkPlace(workPlaceDTO, id));
     }
 
