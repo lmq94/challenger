@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.UniqueElements;
 
 @NoArgsConstructor
 @Data
@@ -19,7 +18,7 @@ public class UserDTO {
     @Email(message = "La direccion de correo debe tener un formato valido" )
     private String email;
 
-    @Size(min = 8, max = 20, message = "La contraseña debe tener entre 8 y 20 caracteres")
+    @Size(min = 8, message = "La contraseña debe tener mas de 8 caracteres")
     private String password;
 
     public UserDTO(User user) {
