@@ -4,6 +4,7 @@ import app.domain.User;
 import app.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import app.repository.UserRepository;
 
@@ -11,6 +12,9 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -29,7 +33,7 @@ public class UserService {
         }
 
         try {
-            User newUser = new User(user.getUsername(), user.getEmail(), user.getPassword());
+            User newUser = new User(user.getUsername(), user.getEmail(), passwordEncoder.encode(user.getPassword()));
             this.userRepository.save(newUser);
         } catch (Exception e) {
             throw new IllegalArgumentException("Error al crear el usuario: " + user.getUsername());
