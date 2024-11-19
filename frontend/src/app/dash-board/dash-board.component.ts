@@ -3,11 +3,12 @@ import { TableComponent } from "../table/table.component";
 import { CardData } from '../interfaces/card-data';
 import { CardService } from '../card-service';
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-dash-board',
   standalone: true,
-  imports: [TableComponent, CommonModule],
+  imports: [TableComponent, CommonModule, SidebarComponent],
   templateUrl: './dash-board.component.html',
   styleUrl: './dash-board.component.css'
 })
