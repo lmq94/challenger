@@ -9,4 +9,9 @@
 
 :root {
     --primary-grey: #B0CAD1;
+    --primary-green:#33A3AA;
+  }
+
+  body {
+    background:var(--primary-grey);
   }
