@@ -1,0 +1,32 @@
+<div class="overflow-x-auto p-5 bg-white">
+    <div class = "flex">
+      <p class ="mx-1 p-1 text-xl font-bold">Plantas</p>
+      <button class ="mx-1 border-2  p-1 rounded-lg"> + Crear nueva planta</button>
+  
+    </div>
+    <table class="table-auto w-full border-t border-gray-300 mt-4">
+      <thead>
+        <tr class="">
+          <th class="text-left px-1 py-2 text-primary-grey">Pais</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Nombre</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Lecturas</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Alertas medias</th>
+          <th class="text-left px-1 py-2 text-primary-grey">Alertas rojas</th>
+          <th class="text-left px-1  py-2 text-primary-grey">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let workplace of workPlaces">
+          <td class="px-4 py-2">{{ workplace.country }}</td>
+          <td class="px-4 py-2">{{ workplace.name }}</td>
+          <td class="px-4 py-2">{{ workplace.readings }}</td>
+          <td class="px-4 py-2">{{ workplace.mediumAlert }}</td>
+          <td class="px-4 py-2">{{ workplace.redAlert }}</td>
+          <td class="px-4 py-2">
+            <img src="assets/icons/tres-puntos.svg" alt="Icono de tres puntos">
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
