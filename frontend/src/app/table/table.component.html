@@ -1,8 +1,8 @@
 <div class="overflow-x-auto p-5 bg-white">
     <div class = "flex">
       <p class ="mx-1 p-1 text-xl font-bold">Plantas</p>
-      <button class ="mx-1 border-2  p-1 rounded-lg"> + Crear nueva planta</button>
-  
+      <button class ="mx-1 border-2  p-1 rounded-lg" (click)="openInsertPlantModal()"> + Crear nueva planta</button>
+
     </div>
     <table class="table-auto w-full border-t border-gray-300 mt-4">
       <thead>
@@ -20,8 +20,8 @@
           <td class="px-4 py-2">{{ workplace.country }}</td>
           <td class="px-4 py-2">{{ workplace.name }}</td>
           <td class="px-4 py-2">{{ workplace.readings }}</td>
-          <td class="px-4 py-2">{{ workplace.mediumAlert }}</td>
-          <td class="px-4 py-2">{{ workplace.redAlert }}</td>
+          <td class="px-4 py-2">{{ workplace.yellowAlerts }}</td>
+          <td class="px-4 py-2">{{ workplace.redAlerts }}</td>
           <td class="px-4 py-2">
             <img src="assets/icons/tres-puntos.svg" alt="Icono de tres puntos">
 
