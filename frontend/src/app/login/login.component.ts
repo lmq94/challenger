@@ -27,9 +27,9 @@ export class LoginComponent {
     console.log(this.password);
 
     this.authService.login(this.email, this.password).subscribe({
-      next: async (response: string) => {  // 'response' será el token como string
+      next: async (response: string) => {
         console.log('Login exitoso. Token recibido:', response);
-        localStorage.setItem('token', response);  // Guarda el token en localStorage
+        localStorage.setItem('token', response);
 
         try {
           await this.router.navigate(['/dashboard']);
