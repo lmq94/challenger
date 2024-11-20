@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CardData } from './interfaces/card-data';
+import { CardData } from '../interfaces/card-data';
 import { map, Observable } from 'rxjs';
 
 @Injectable({
@@ -20,5 +20,5 @@ export class CardService {
     return this.http.get<any>(this.apiUrl).pipe(map(data => data.cardsDown));
   }
 
-  
+
 }

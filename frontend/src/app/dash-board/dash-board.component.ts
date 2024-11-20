@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TableComponent } from "../table/table.component";
 import { CardData } from '../interfaces/card-data';
-import { CardService } from '../card-service';
+import { CardService } from '../services/card-service';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from "../sidebar/sidebar.component";
 
@@ -31,5 +31,5 @@ export class DashBoardComponent {
   }
 
 
-    
+
 }
