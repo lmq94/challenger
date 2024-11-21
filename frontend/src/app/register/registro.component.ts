@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {UserService} from '../services/user.service';
-import {Router} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {RegisterUser} from '../interfaces/Register-user';
 
 @Component({
@@ -9,7 +9,8 @@ import {RegisterUser} from '../interfaces/Register-user';
   standalone: true,
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
