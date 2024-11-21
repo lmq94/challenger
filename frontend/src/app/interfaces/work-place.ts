@@ -1,4 +1,5 @@
 export interface WorkPlace {
+    id:number
     country: string;
     name:String;
     readings:number;
