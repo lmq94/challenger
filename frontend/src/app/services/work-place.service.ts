@@ -19,4 +19,13 @@ export class WorkPlaceService {
   createWorkPlace(workPlace: CreateWorkPlaceRequest): Observable<string> {
     return this.http.post<string>(this.apiUrl, workPlace, { responseType: 'text' as 'json' });
   }
+
+  updateWorkPlace(id: string | null, WorkPlace: WorkPlace): Observable<WorkPlace> {
+    return this.http.patch<WorkPlace>(`${this.apiUrl}/${id}`, WorkPlace);
+  }
+
+  deleteWorkPlace(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
 }
