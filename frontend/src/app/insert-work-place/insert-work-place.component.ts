@@ -71,4 +71,8 @@ export class InsertWorkPlaceComponent {
     }
   }
 
+  onCancel() {
+    this.dialogRef.close();
+  }
+
 }
