@@ -28,4 +28,8 @@ export class WorkPlaceService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  getSummary(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/summaries`);
+  }
+
 }
