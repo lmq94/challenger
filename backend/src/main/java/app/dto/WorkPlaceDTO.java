@@ -21,11 +21,14 @@ public class WorkPlaceDTO {
 
     private int readings;
 
+    private Long id;
+
     public WorkPlaceDTO(WorkPlace workPlace) {
         this.country = workPlace.getCountry();
         this.name = workPlace.getName();
         this.yellowAlerts = workPlace.getYellowAlerts();
         this.redAlerts = workPlace.getRedAlerts();
         this.readings = workPlace.getReadings();
+        this.id = workPlace.getId();
     }
 }
