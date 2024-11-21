@@ -1,6 +1,7 @@
 package app.Controller;
 
 import app.dto.WorkPlaceDTO;
+import app.dto.WorkPlaceSummaryDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +36,11 @@ public class WorkPlaceController {
     public  ResponseEntity<?> deleteWorkPlace(@PathVariable Long id){
         this.workPlaceService.deleteWorkPlace(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("La con la id " + id + "fue borrada con exito");
+    }
+
+    @GetMapping("/summaries")
+    public ResponseEntity<?> getWorkPlaceSummaries() {
+        return ResponseEntity.ok(workPlaceService.getWorkPlaceSummaries());
     }
 
 

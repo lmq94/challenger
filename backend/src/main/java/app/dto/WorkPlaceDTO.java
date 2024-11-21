@@ -21,6 +21,8 @@ public class WorkPlaceDTO {
 
     private int readings;
 
+    private int sensors;
+
     private Long id;
 
     public WorkPlaceDTO(WorkPlace workPlace) {
@@ -29,6 +31,7 @@ public class WorkPlaceDTO {
         this.yellowAlerts = workPlace.getYellowAlerts();
         this.redAlerts = workPlace.getRedAlerts();
         this.readings = workPlace.getReadings();
+        this.sensors = workPlace.getSensors();
         this.id = workPlace.getId();
     }
 }

@@ -2,6 +2,7 @@ package app.service;
 
 import app.dto.WorkPlaceDTO;
 import app.domain.WorkPlace;
+import app.dto.WorkPlaceSummaryDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class WorkPlaceService {
         try {
             WorkPlace newWorkPlace = new WorkPlace(workPlaceDTO.getCountry(), workPlaceDTO.getName(),
                     workPlaceDTO.getYellowAlerts(), workPlaceDTO.getRedAlerts(),
-                    workPlaceDTO.getReadings());
+                    workPlaceDTO.getReadings(),workPlaceDTO.getSensors());
 
             this.workPlaceRepository.save(newWorkPlace);
             return "Planta creada con exito!";
@@ -58,6 +59,7 @@ public class WorkPlaceService {
             workPlace.setYellowAlerts(workPlaceDTO.getYellowAlerts());
             workPlace.setRedAlerts(workPlaceDTO.getRedAlerts());
             workPlace.setReadings(workPlaceDTO.getReadings());
+            workPlace.setSensors(workPlaceDTO.getSensors());
             this.workPlaceRepository.save(workPlace);
             return new WorkPlaceDTO(workPlace);
         } else {
@@ -73,6 +75,19 @@ public class WorkPlaceService {
         } else {
             throw new IllegalArgumentException("Planta no encontrada con id: " + id);
         }
+    }
+
+    public WorkPlaceSummaryDTO getWorkPlaceSummaries() {
+        List<WorkPlace> workplaces = workPlaceRepository.findAll();
+
+        int totalYellowAlerts = workplaces.stream().mapToInt(WorkPlace::getYellowAlerts).sum();
+        int totalRedAlerts = workplaces.stream().mapToInt(WorkPlace::getRedAlerts).sum();
+        int totalSensors = workplaces.stream().mapToInt(WorkPlace::getSensors).sum();
+        int totalReadings = workplaces.stream().mapToInt(WorkPlace::getReadings).sum();
+
+        return new WorkPlaceSummaryDTO(totalYellowAlerts, totalRedAlerts, totalSensors, totalReadings);
+
+
     }
 }
 

@@ -26,12 +26,15 @@ public class WorkPlace {
 
     private int readings;
 
+    private int sensors;
 
-    public WorkPlace(String country, String name, int yellowAlerts, int redAlerts, int readings) {
+
+    public WorkPlace(String country, String name, int yellowAlerts, int redAlerts, int readings, int sensors) {
         this.country = country;
         this.name = name;
         this.yellowAlerts = yellowAlerts;
         this.redAlerts = redAlerts;
         this.readings = readings;
+        this.sensors = sensors;
     }
 }
