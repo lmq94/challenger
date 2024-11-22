@@ -16,6 +16,7 @@
             "outputPath": "dist/frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/frontend/",
             "polyfills": [
               "zone.js"
             ],
@@ -46,7 +47,8 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/frontend/"
             },
             "development": {
               "optimization": false,

@@ -1,4 +1,5 @@
 {
-  "root": "dist/frontend"
-
+  "root": "dist/frontend",
+  "cleanUrls": true,
+  "httpsOnly": true
 }
