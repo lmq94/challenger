@@ -6,7 +6,8 @@
     "start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build": "ng build --configuration production"
+    "build": "ng build --configuration production",
+    "postbuild": "cp ./_redirects ./dist/frontend/_redirects"
   },
   "private": true,
   "dependencies": {
