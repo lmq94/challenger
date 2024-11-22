@@ -8,7 +8,7 @@ import {CreateWorkPlaceRequest, WorkPlace} from '../interfaces/work-place';
 })
 export class WorkPlaceService {
 
-  private apiUrl = 'http://localhost:8080/workPlaces';
+  private apiUrl = 'https://challenger-u6b0.onrender.com/workPlaces';
 
   constructor(private http: HttpClient) {}
 

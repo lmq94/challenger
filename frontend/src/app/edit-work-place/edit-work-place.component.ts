@@ -19,7 +19,6 @@ import {CountriesService} from '../countries-service';
 })
 export class EditWorkPlaceComponent implements OnInit {
   workPlaceForm: FormGroup;
-  currentWorkPlaceId: string | null = null;
   countries: string[] = [];
   loading = true;
 
@@ -30,16 +29,15 @@ export class EditWorkPlaceComponent implements OnInit {
     public dialogRef: MatDialogRef<EditWorkPlaceComponent>,
     @Inject(MAT_DIALOG_DATA) public data: WorkPlace
   ) {
-
     console.log('Data recibida en el constructor:', this.data);
     this.workPlaceForm = this.fb.group({
       id: [this.data.id],
       name: [this.data.name, Validators.required],
       country: [this.data.country, Validators.required],
-      readings: [this.data.readings, Validators.required],
-      yellowAlerts: [this.data.yellowAlerts, Validators.required],
-      redAlerts:[this.data.redAlerts, Validators.required]
-
+      readings: [this.data.readings, [Validators.required, Validators.min(0)]],
+      yellowAlerts: [this.data.yellowAlerts, [Validators.required, Validators.min(0)]],
+      redAlerts: [this.data.redAlerts, [Validators.required, Validators.min(0)]],
+      sensors: [this.data.sensors, [Validators.required, Validators.min(0)]],
     });
   }
 

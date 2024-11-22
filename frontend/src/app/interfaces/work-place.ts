@@ -3,8 +3,9 @@ export interface WorkPlace {
     country: string;
     name:String;
     readings:number;
-    yellowAlerts: string;
-    redAlerts:string
+    yellowAlerts: number;
+    redAlerts:number;
+    sensors: number;
 }
 
 export interface CreateWorkPlaceRequest {

@@ -41,5 +41,8 @@
       <p class="mt-4 text-sm">Protegido con reCAPTCHA y sujeto a la política de privacidad y condiciones</p>
       <p class="text-sm mt-4">¿Ya dispones de una cuenta? <a routerLink="/login" class="text-blue-500 hover:text-blue-700 mx-1">Haz clic aquí</a>para iniciar sesion</p>
     </div>
+    <div *ngIf="errorMessage" class="bg-red-600 text-white text-center mt-5">
+      {{ errorMessage }}
+    </div>
   </form>
 </div>

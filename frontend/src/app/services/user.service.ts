@@ -8,10 +8,11 @@ import {Observable} from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:8080/users/register';
+  private apiUrl = 'https://challenger-u6b0.onrender.com/users/register';
   constructor(private http: HttpClient) { }
 
   registerUser(user: RegisterUser): Observable<string> {
     return this.http.post<string>(this.apiUrl, user, { responseType: 'text' as 'json' });
   }
+
 }

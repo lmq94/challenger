@@ -52,7 +52,7 @@ export class TableComponent implements OnInit  {
 
   openEditWorkPlaceModal(workplace: WorkPlace) {
     const dialogRef = this.dialog.open(EditWorkPlaceComponent, {
-      width: '800px',
+      width: '1600px',
       disableClose: true,
       data: workplace
     });
@@ -75,6 +75,7 @@ export class TableComponent implements OnInit  {
 
   editWorkPlace(workplace: WorkPlace): void {
     this.openEditWorkPlaceModal(workplace)
+    this.fetchPlants();
   }
 
 
