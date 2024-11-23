@@ -53,6 +53,9 @@ public class WorkPlaceService {
         Optional<WorkPlace> workPlaceSearch = this.workPlaceRepository.findById(id);
 
         if (workPlaceSearch.isPresent()) {
+            if (workPlaceSearch.get().getName().equals(workPlaceDTO.getName())) {
+                throw new DataIntegrityViolationException("Ya existe una planta con el nombre: " + workPlaceDTO.getName());
+            }
             WorkPlace workPlace = workPlaceSearch.get();
             workPlace.setCountry(workPlaceDTO.getCountry());
             workPlace.setName(workPlaceDTO.getName());
